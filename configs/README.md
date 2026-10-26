@@ -8,6 +8,8 @@
 | `llm.json` | Ollama 地址、3B 润色模型；`vlm_enabled` 控制是否调用 moondream（默认 false） |
 | `caption.json` | 旧的 ViT-GPT2 描述，`enabled` 为 false，不要打开 |
 
+`scene_bank.json` 约 260 条**完整英文场面句**，CLIP 整句检索，不会把「和服、背影」当积木再拼。只加画面差得开的通用场面，不要按某张常用图写特写服装/角色，也不要堆近义特写。元素类词放 `tag_vocab.json`。每条需要 `id`、`mode`、`en`、`zh`。
+
 改 `tag_vocab.json` 或 `scene_bank.json` 后执行：
 
 ```powershell

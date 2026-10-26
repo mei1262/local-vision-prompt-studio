@@ -103,7 +103,16 @@ def scene_conflict_bans(sentence: str, mode: str) -> set[str]:
     has_three = "three " in text
     has_two = any(
         token in text
-        for token in ("two ", "two people", "two anime", "boy and girl", "girl and boy", "a man and a woman")
+        for token in (
+            "two ",
+            "two people",
+            "two anime",
+            "two characters",
+            "boy and girl",
+            "girl and boy",
+            "a man and a woman",
+            "an adult and a child",
+        )
     )
     singular = (not has_two and not has_three and not has_four) and any(
         token in text
@@ -113,8 +122,12 @@ def scene_conflict_bans(sentence: str, mode: str) -> set[str]:
             "a woman",
             "a man",
             "a person",
+            "one person",
+            "one character",
+            "a character",
             "an anime character",
-            "a studio ghibli girl",
+            "an anime illustration of a person",
+            "an anime portrait of a person",
             "a young person",
             "a selfie",
             "a webcam portrait",
@@ -179,7 +192,12 @@ def _blocked(phrase: str, bans: set[str]) -> bool:
 
 def collect_phrases(analysis: dict[str, Any], extra_instruction: str) -> list[str]:
     grouped = _grouped(analysis)
-    phrases = english_phrases(grouped)
+    phrases: list[str] = []
+    for item in analysis.get("lock_phrases") or []:
+        text = str(item).strip(" .")
+        if text:
+            phrases.append(text)
+    phrases.extend(english_phrases(grouped))
     phrases.extend(_appearance_phrases(analysis))
     lowered = extra_instruction.lower()
     for key, extras in INSTRUCTION_ADD:
@@ -300,6 +318,8 @@ def assemble_prompts(
     params = suggest_params(analysis, target_model, mode)
     if extra_instruction:
         params += f" 已纳入追加指令：{extra_instruction}"
+    if analysis.get("lock_notes"):
+        params += " 已套用身份/风格锁（新构图，不复刻参考图姿势）。"
 
     return {
         "positive": positive,

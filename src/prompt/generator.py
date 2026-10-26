@@ -6,6 +6,7 @@ from typing import Any
 
 from src.llm.ollama_client import generate_json, is_available, pick_model, usable_vlm_text
 from src.prompt.assembler import assemble_prompts, suggest_params
+from src.prompt.video import assemble_video, rewrite_keeps_contract
 
 
 def _build_llm_prompt(
@@ -23,6 +24,7 @@ Rules:
 - Ignore VLM notes that look like "ids", numbers-only, or garbled characters.
 - Do not invent people or objects. English only in positive/negative. No CJK in prompts.
 - Use the user intent as direction (style, mood, motion), not as new objects.
+- Identity/style locks describe WHO and HOW it looks. Keep them. The CLIP scene is a NEW shot; do not copy the reference pose or background unless the scene sentence says so.
 - If the user intent conflicts with the image, keep the image and adapt the wording.
 - Do not keep conflicting tags (half-body and full-body, anime and photoreal).
 - Do not add people-count, mirror, album cover, mecha, film still, or child unless they appear in the scene sentence.
@@ -38,6 +40,7 @@ Video: add camera and motion.
 Analysis:
 media_mode: {analysis.get("media_mode", "")}
 scene: {analysis.get("scene_sentence", "")}
+identity_style_locks: {", ".join(analysis.get("lock_phrases") or []) or "(none)"}
 vlm_visual_notes: {usable_vlm_text(str(analysis.get("vlm_text") or "")) or "(none)"}
 style_tags: {", ".join(analysis.get("style_tags") or [])}
 composition: {analysis.get("composition", "")}
@@ -96,4 +99,83 @@ def generate_prompts(
 
     draft["notes"] = notes
     draft["analysis_preview"] = str(analysis.get("content", ""))
+    return draft
+
+
+def _video_llm_prompt(analysis: dict[str, Any], draft: dict[str, str], extra: str) -> str:
+    return f"""You rewrite ONE video prompt. Return JSON only:
+{{"positive":"...","negative":"..."}}
+Rules:
+- English only.
+- One continuous shot. No storyboard, no shot 1 / shot 2, no "cut to".
+- Keep the scene sentence facts. Do not invent people, costumes, or places.
+- Keep the camera, duration, shot size, light, focus, image quality, and sound phrases from the draft.
+- Do not add spoken dialogue or a second shot.
+- The user note is mood only. It must not change the camera.
+- Do not infer camera movement from the still image.
+
+Scene: {analysis.get("scene_sentence", "")}
+User mood note: {extra or "(none)"}
+Draft positive: {draft.get("positive", "")}
+Draft negative: {draft.get("negative", "")}
+"""
+
+
+def generate_video_prompts(
+    analysis: dict[str, Any],
+    *,
+    style: str,
+    camera: str,
+    motion: str,
+    duration: str,
+    shot_size: str = "跟随场面句",
+    light: str = "跟随场面句",
+    focus: str = "主体清晰",
+    grade: str = "清晰稳定",
+    ambience: str = "不写",
+    environment: str = "",
+    subject: str = "",
+    music: str = "",
+    action: str = "",
+    extra_instruction: str = "",
+) -> dict[str, str]:
+    draft = assemble_video(
+        analysis,
+        style=style,
+        camera=camera,
+        motion=motion,
+        duration=duration,
+        shot_size=shot_size,
+        light=light,
+        focus=focus,
+        grade=grade,
+        ambience=ambience,
+        environment=environment,
+        subject=subject,
+        music=music,
+        action=action,
+        extra_instruction=extra_instruction,
+    )
+    notes = "视频提示来源：镜头模板。参考图另交视频模型，正文按槽位套入。"
+    if draft.get("skip_rewrite"):
+        draft["notes"] = notes
+        return draft
+    if is_available():
+        model = pick_model()
+        if model:
+            improved = generate_json(
+                _video_llm_prompt(analysis, draft, extra_instruction),
+                model=model,
+            )
+            rewritten = str((improved or {}).get("positive") or "").strip()
+            if rewritten and rewrite_keeps_contract(rewritten, draft):
+                draft["positive"] = rewritten
+                if improved.get("negative"):
+                    draft["negative"] = str(improved["negative"]).strip()
+                notes = f"视频提示来源：Ollama（{model}）润色。镜头和时长仍以选项为准。"
+            else:
+                notes = f"Ollama（{model}）改写偏离场面句或镜头，已回退规则模板。"
+        else:
+            notes = "Ollama 在运行，但没有可用模型。已用规则模板。"
+    draft["notes"] = notes
     return draft
