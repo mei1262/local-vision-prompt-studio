@@ -1,0 +1,20 @@
+{
+  "host": "http://127.0.0.1:11434",
+  "timeout_sec": 90,
+  "vlm_enabled": false,
+  "vlm_timeout_sec": 180,
+  "temperature": 0.5,
+  "num_ctx": 2048,
+  "preferred_vlm": [
+    "moondream",
+    "moondream:latest"
+  ],
+  "preferred_models": [
+    "qwen2.5:3b",
+    "qwen2.5:3b-instruct",
+    "llama3.2:3b",
+    "llama3.2:3b-instruct",
+    "phi3:mini",
+    "gemma2:2b"
+  ]
+}

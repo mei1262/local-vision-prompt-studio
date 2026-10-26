@@ -1,0 +1,137 @@
+{
+  "templates": [
+    "a photo of {}",
+    "an illustration of {}",
+    "a picture of {}"
+  ],
+  "groups": {
+    "subject": [
+      {"id": "person", "en": "a person", "zh": "人物"},
+      {"id": "woman", "en": "a woman", "zh": "女性"},
+      {"id": "man", "en": "a man", "zh": "男性"},
+      {"id": "child", "en": "a child", "zh": "儿童"},
+      {"id": "crowd", "en": "a crowd of people", "zh": "人群"},
+      {"id": "animal", "en": "an animal", "zh": "动物"},
+      {"id": "cat", "en": "a cat", "zh": "猫"},
+      {"id": "dog", "en": "a dog", "zh": "狗"},
+      {"id": "bird", "en": "a bird", "zh": "鸟"},
+      {"id": "landscape", "en": "a landscape", "zh": "风景"},
+      {"id": "cityscape", "en": "a cityscape", "zh": "城市景观"},
+      {"id": "interior", "en": "an interior scene", "zh": "室内"},
+      {"id": "architecture", "en": "architecture", "zh": "建筑"},
+      {"id": "vehicle", "en": "a vehicle", "zh": "载具"},
+      {"id": "food", "en": "food", "zh": "食物"},
+      {"id": "still_life", "en": "a still life", "zh": "静物"},
+      {"id": "portrait_subject", "en": "a portrait subject", "zh": "肖像主体"},
+      {"id": "mecha", "en": "a robot or mecha", "zh": "机甲/机器人"},
+      {"id": "fantasy_creature", "en": "a fantasy creature", "zh": "奇幻生物"},
+      {"id": "two_people", "en": "two people", "zh": "两人"},
+      {"id": "three_people", "en": "three people", "zh": "三人"},
+      {"id": "four_people", "en": "four people", "zh": "四人"}
+    ],
+    "action": [
+      {"id": "on_the_phone", "en": "talking on a telephone", "zh": "打电话"},
+      {"id": "getting_haircut", "en": "getting a haircut", "zh": "理发"},
+      {"id": "posing", "en": "posing for a picture", "zh": "摆拍"}
+    ],
+    "setting": [
+      {"id": "nature", "en": "nature scenery", "zh": "自然"},
+      {"id": "forest", "en": "a forest", "zh": "森林"},
+      {"id": "ocean", "en": "the ocean", "zh": "海洋"},
+      {"id": "mountain", "en": "mountains", "zh": "山岳"},
+      {"id": "street", "en": "a street scene", "zh": "街道"},
+      {"id": "night_city", "en": "a night city", "zh": "夜景城市"},
+      {"id": "indoor", "en": "an indoor setting", "zh": "室内环境"},
+      {"id": "studio", "en": "a studio backdrop", "zh": "棚拍背景"},
+      {"id": "cyberpunk", "en": "a cyberpunk setting", "zh": "赛博朋克场景"},
+      {"id": "fantasy", "en": "a fantasy world", "zh": "奇幻世界"},
+      {"id": "sci_fi", "en": "a science fiction setting", "zh": "科幻场景"},
+      {"id": "historical", "en": "a historical setting", "zh": "历史场景"},
+      {"id": "modern", "en": "a modern everyday scene", "zh": "现代日常"},
+      {"id": "field", "en": "a grassy field", "zh": "草地/田野"}
+    ],
+    "shot": [
+      {"id": "close_up", "en": "a close-up shot", "zh": "特写"},
+      {"id": "portrait_shot", "en": "a portrait shot", "zh": "肖像镜头"},
+      {"id": "half_body", "en": "a half-body shot", "zh": "半身"},
+      {"id": "full_body", "en": "a full-body shot", "zh": "全身"},
+      {"id": "wide_shot", "en": "a wide shot", "zh": "广角/远景"},
+      {"id": "aerial", "en": "an aerial view", "zh": "航拍视角"},
+      {"id": "from_above", "en": "viewed from above", "zh": "俯视"},
+      {"id": "from_below", "en": "viewed from below", "zh": "仰视"},
+      {"id": "side_view", "en": "a side view", "zh": "侧面"},
+      {"id": "back_view", "en": "seen from behind", "zh": "背面"}
+    ],
+    "composition": [
+      {"id": "centered", "en": "centered composition", "zh": "居中构图"},
+      {"id": "rule_of_thirds", "en": "rule of thirds composition", "zh": "三分法"},
+      {"id": "symmetry", "en": "symmetrical composition", "zh": "对称构图"},
+      {"id": "looking_at_viewer", "en": "looking at the viewer", "zh": "注视镜头"},
+      {"id": "looking_away", "en": "looking away from the camera", "zh": "看向别处"},
+      {"id": "dynamic_pose", "en": "a dynamic pose", "zh": "动态姿势"},
+      {"id": "negative_space", "en": "strong negative space", "zh": "留白"},
+      {"id": "mirror", "en": "a mirror reflection", "zh": "镜子/倒影"}
+    ],
+    "style": [
+      {"id": "photorealistic", "en": "a photorealistic image", "zh": "写实"},
+      {"id": "cinematic", "en": "cinematic style", "zh": "电影感"},
+      {"id": "anime", "en": "anime style", "zh": "动漫"},
+      {"id": "illustration", "en": "digital illustration", "zh": "插画"},
+      {"id": "concept_art", "en": "concept art", "zh": "概念艺术"},
+      {"id": "oil_painting", "en": "an oil painting", "zh": "油画"},
+      {"id": "watercolor", "en": "a watercolor painting", "zh": "水彩"},
+      {"id": "ink_wash", "en": "ink wash painting", "zh": "水墨"},
+      {"id": "sketch", "en": "a pencil sketch", "zh": "素描/线稿"},
+      {"id": "comic", "en": "comic book style", "zh": "漫画"},
+      {"id": "pixel_art", "en": "pixel art", "zh": "像素画"},
+      {"id": "3d_render", "en": "a 3d render", "zh": "三维渲染"},
+      {"id": "impressionist", "en": "impressionist style", "zh": "印象派"},
+      {"id": "minimalist", "en": "minimalist style", "zh": "极简"}
+    ],
+    "medium": [
+      {"id": "photograph", "en": "a photograph", "zh": "摄影"},
+      {"id": "film_still", "en": "a film still", "zh": "电影截帧"},
+      {"id": "digital_painting", "en": "a digital painting", "zh": "数字绘画"},
+      {"id": "traditional_painting", "en": "a traditional painting", "zh": "传统绘画"},
+      {"id": "poster", "en": "a poster", "zh": "海报"},
+      {"id": "album_cover", "en": "an album cover", "zh": "专辑封面"},
+      {"id": "graphic_design", "en": "graphic design", "zh": "平面设计"},
+      {"id": "selfie", "en": "a selfie photo", "zh": "自拍"}
+    ],
+    "lighting": [
+      {"id": "golden_hour", "en": "golden hour lighting", "zh": "黄金时刻"},
+      {"id": "studio_light", "en": "studio lighting", "zh": "棚灯"},
+      {"id": "soft_light", "en": "soft lighting", "zh": "柔光"},
+      {"id": "dramatic_light", "en": "dramatic lighting", "zh": "戏剧光"},
+      {"id": "backlight", "en": "backlighting", "zh": "逆光"},
+      {"id": "neon_light", "en": "neon lighting", "zh": "霓虹光"},
+      {"id": "overcast", "en": "overcast lighting", "zh": "阴天光"},
+      {"id": "night_light", "en": "night lighting", "zh": "夜光"}
+    ],
+    "color": [
+      {"id": "vibrant", "en": "vibrant colors", "zh": "高饱和"},
+      {"id": "muted", "en": "muted colors", "zh": "低饱和"},
+      {"id": "pastel", "en": "pastel colors", "zh": "粉彩"},
+      {"id": "monochrome", "en": "monochrome", "zh": "单色"},
+      {"id": "warm_tone", "en": "warm color tones", "zh": "暖色调"},
+      {"id": "cool_tone", "en": "cool color tones", "zh": "冷色调"},
+      {"id": "high_contrast", "en": "high contrast colors", "zh": "高对比"}
+    ],
+    "mood": [
+      {"id": "peaceful", "en": "a peaceful mood", "zh": "平静"},
+      {"id": "cheerful", "en": "a cheerful mood", "zh": "欢快"},
+      {"id": "melancholic", "en": "a melancholic mood", "zh": "忧郁"},
+      {"id": "mysterious", "en": "a mysterious mood", "zh": "神秘"},
+      {"id": "tense", "en": "a tense atmosphere", "zh": "紧张"},
+      {"id": "romantic", "en": "a romantic mood", "zh": "浪漫"},
+      {"id": "epic", "en": "an epic atmosphere", "zh": "史诗"}
+    ],
+    "quality": [
+      {"id": "highly_detailed", "en": "a highly detailed image", "zh": "高细节"},
+      {"id": "depth_of_field", "en": "shallow depth of field", "zh": "浅景深"},
+      {"id": "bokeh", "en": "bokeh background", "zh": "背景虚化"},
+      {"id": "sharp_focus", "en": "sharp focus", "zh": "锐利对焦"},
+      {"id": "grainy", "en": "film grain", "zh": "胶片颗粒"}
+    ]
+  }
+}

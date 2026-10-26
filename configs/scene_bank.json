@@ -1,0 +1,33 @@
+{
+  "scenes": [
+    {"id": "album_four_men", "mode": "graphic", "en": "four men posing for a colorful album cover", "zh": "四人彩色专辑封面"},
+    {"id": "album_band_portrait", "mode": "graphic", "en": "a pop band portrait designed as a record sleeve", "zh": "乐队唱片封面"},
+    {"id": "barber_haircut", "mode": "photo", "en": "a black and white photo of a man getting a haircut", "zh": "黑白理发照片"},
+    {"id": "barber_cape", "mode": "photo", "en": "a man wearing a barber cape in a salon chair", "zh": "理发围布坐椅"},
+    {"id": "selfie_bedroom", "mode": "photo", "en": "a selfie of a young person in a bedroom", "zh": "卧室自拍"},
+    {"id": "webcam_portrait", "mode": "photo", "en": "a webcam portrait of a person looking at the camera", "zh": "摄像头肖像"},
+    {"id": "anime_phone", "mode": "anime", "en": "an anime girl holding a telephone receiver", "zh": "动漫女孩打电话"},
+    {"id": "anime_mirror", "mode": "anime", "en": "an anime woman facing a tall indoor vanity mirror", "zh": "室内对镜的动漫女性"},
+    {"id": "anime_white_hair", "mode": "anime", "en": "an anime character with long white hair", "zh": "白发动漫角色"},
+    {"id": "anime_close_portrait", "mode": "anime", "en": "a close-up anime portrait of a young woman", "zh": "动漫女性特写"},
+    {"id": "ghibli_girl_field", "mode": "anime", "en": "a studio ghibli girl standing in a grassy field", "zh": "吉卜力草地少女"},
+    {"id": "ghibli_girl_forest", "mode": "anime", "en": "a studio ghibli girl standing in a green forest", "zh": "吉卜力森林少女"},
+    {"id": "ghibli_wind", "mode": "anime", "en": "an anime girl with short brown hair and goggles", "zh": "短发护目镜少女"},
+    {"id": "photo_four_people", "mode": "photo", "en": "a photograph of four people standing together", "zh": "四人合影"},
+    {"id": "photo_one_person", "mode": "photo", "en": "a photograph of one person", "zh": "单人照片"},
+    {"id": "street_photo", "mode": "photo", "en": "a candid street photograph", "zh": "街头抓拍"},
+    {"id": "studio_portrait", "mode": "photo", "en": "a studio portrait photograph", "zh": "棚拍肖像"},
+    {"id": "landscape_photo", "mode": "photo", "en": "a landscape photograph of nature", "zh": "自然风景照"},
+    {"id": "city_night", "mode": "photo", "en": "a night cityscape photograph", "zh": "城市夜景照"},
+    {"id": "cat_photo", "mode": "photo", "en": "a photograph of a cat", "zh": "猫的照片"},
+    {"id": "dog_photo", "mode": "photo", "en": "a photograph of a dog", "zh": "狗的照片"},
+    {"id": "food_photo", "mode": "photo", "en": "a photograph of food", "zh": "食物照片"},
+    {"id": "interior_photo", "mode": "photo", "en": "a photograph of an indoor room", "zh": "室内照片"},
+    {"id": "anime_two_girls", "mode": "anime", "en": "two anime girls standing together", "zh": "两位动漫女孩"},
+    {"id": "mecha_illustration", "mode": "anime", "en": "an illustration of a giant robot or mecha", "zh": "机甲插画"},
+    {"id": "oil_portrait", "mode": "paint", "en": "an oil painting portrait of a person", "zh": "人物油画肖像"},
+    {"id": "watercolor_landscape", "mode": "paint", "en": "a watercolor landscape painting", "zh": "风景水彩"},
+    {"id": "poster_design", "mode": "graphic", "en": "a graphic poster with bold typography", "zh": "大字海报"},
+    {"id": "film_still_drama", "mode": "photo", "en": "a cinematic film still of actors", "zh": "电影剧照"}
+  ]
+}

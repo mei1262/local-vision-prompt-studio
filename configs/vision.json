@@ -1,0 +1,42 @@
+{
+  "image_size": 224,
+  "score_threshold": 0.10,
+  "relative_floor": 0.86,
+  "always_top_k": 10,
+  "max_tags_per_group": 3,
+  "max_style_tags": 12,
+  "warmup": true,
+  "provider_order": ["DmlExecutionProvider", "CPUExecutionProvider"],
+  "models": [
+    {
+      "id": "vit-l-14",
+      "label": "CLIP ViT-L/14",
+      "repo": "Xenova/clip-vit-large-patch14",
+      "remote_vision": "onnx/vision_model.onnx",
+      "remote_text": "onnx/text_model.onnx",
+      "remote_joint": "onnx/model_quantized.onnx",
+      "remote_tokenizer": "tokenizer.json",
+      "vision_onnx": "models/clip-vit-l-14/vision.onnx",
+      "text_onnx": "models/clip-vit-l-14/text.onnx",
+      "joint_onnx": "models/clip-vit-l-14/joint.onnx",
+      "tokenizer": "models/clip-vit-l-14/tokenizer.json",
+      "embeddings": "models/clip-vit-l-14/tag_embeddings.npz",
+      "scene_embeddings": "models/clip-vit-l-14/scene_embeddings.npz"
+    },
+    {
+      "id": "vit-b-16",
+      "label": "CLIP ViT-B/16",
+      "repo": "Xenova/clip-vit-base-patch16",
+      "remote_vision": "onnx/vision_model.onnx",
+      "remote_text": "onnx/text_model.onnx",
+      "remote_joint": "onnx/model_quantized.onnx",
+      "remote_tokenizer": "tokenizer.json",
+      "vision_onnx": "models/clip-vit-b-16/vision.onnx",
+      "text_onnx": "models/clip-vit-b-16/text.onnx",
+      "joint_onnx": "models/clip-vit-b-16/joint.onnx",
+      "tokenizer": "models/clip-vit-b-16/tokenizer.json",
+      "embeddings": "models/clip-vit-b-16/tag_embeddings.npz",
+      "scene_embeddings": "models/clip-vit-b-16/scene_embeddings.npz"
+    }
+  ]
+}

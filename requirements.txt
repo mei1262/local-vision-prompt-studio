@@ -1,0 +1,10 @@
+# 界面与视觉分析当前所需依赖。
+# 请只装 onnxruntime-directml，不要再装官方 onnxruntime，二者会冲突。
+# 不要用 Anaconda base 硬装：其 site-packages 常不可写，且 huggingface-hub 过新会和 Gradio 4 打架。
+
+gradio>=5.7.1,<6
+pillow>=10.4.0,<14
+requests>=2.32.0,<3
+numpy>=1.26.0,<3
+onnxruntime-directml>=1.19.0,<2
+tokenizers>=0.20.0,<1

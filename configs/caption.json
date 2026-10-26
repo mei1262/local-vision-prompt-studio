@@ -1,0 +1,21 @@
+{
+  "enabled": false,
+  "max_new_tokens": 32,
+  "provider_order": ["CPUExecutionProvider", "DmlExecutionProvider"],
+  "models": [
+    {
+      "id": "vit-gpt2",
+      "label": "ViT-GPT2 caption",
+      "repo": "Xenova/vit-gpt2-image-captioning",
+      "image_size": 224,
+      "bos_id": 50256,
+      "eos_id": 50256,
+      "encoder": "models/vit-gpt2-caption/encoder.onnx",
+      "decoder": "models/vit-gpt2-caption/decoder.onnx",
+      "tokenizer": "models/vit-gpt2-caption/tokenizer.json",
+      "remote_encoder": "onnx/encoder_model_quantized.onnx",
+      "remote_decoder": "onnx/decoder_model_quantized.onnx",
+      "remote_tokenizer": "tokenizer.json"
+    }
+  ]
+}
